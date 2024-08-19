@@ -14,11 +14,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            overflow: hidden;
+            min-height: 100vh;
+            overflow-x: hidden;
         }
         .container {
             text-align: center;
+            max-width: 800px;
+            padding: 2rem;
         }
         h1 {
             font-size: 4rem;
@@ -35,6 +37,36 @@
             opacity: 0;
             transform: scale(0.9);
             animation: fadeInScale 1s ease-out 0.5s forwards;
+            margin-bottom: 2rem;
+        }
+        .scroll-text {
+            overflow: hidden;
+            height: 50px;
+        }
+        .scroll-text p {
+            animation: scroll 20s linear infinite;
+            white-space: nowrap;
+        }
+        .game-embed {
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        .play-button {
+            display: inline-block;
+            background-color: #00ff00;
+            color: #000000;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
+        .play-button:hover {
+            background-color: #00cc00;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
         }
         @keyframes fadeInDown {
             to {
@@ -48,6 +80,10 @@
                 transform: scale(1);
             }
         }
+        @keyframes scroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
         .glow {
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
         }
@@ -57,7 +93,18 @@
     <div class="container">
         <h1 class="glow">rbxlocker</h1>
         <div class="cool-box">
-            <p>Welcome to the future of secure storage.</p>
+            <div class="scroll-text">
+                <p>Our services are 100% undetected since it is not against Roblox TOS, and games have consented to use RBXLocker.</p>
+            </div>
+        </div>
+        <h2>Games:</h2>
+        <div class="game-embed">
+            <h3>Sigma OBBY</h3>
+            <a href="https://www.roblox.com/de/games/19001953569/Sigma-OBBY" class="play-button">Play</a>
+        </div>
+        <div class="cool-box">
+            <h3>Request access</h3>
+            <p>To request access, join .gg/BqZ9TcAG and dm the owner or ask in chat.</p>
         </div>
     </div>
 </body>
